@@ -41,7 +41,7 @@ jobs:
         python setup.py sdist bdist_wheel
         twine upload dist/*
 
-      - name: Run MinIO image
+    - name: Run MinIO image
       run: |
         docker run -d -p 9000:9000 \
         -e "MINIO_ACCESS_KEY=$MINIO_ACCESS_KEY" \
